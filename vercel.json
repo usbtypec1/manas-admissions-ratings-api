@@ -9,6 +9,14 @@
     {
       "src": "/(.*)",
       "dest": "main.py"
+    },
+    {
+      "src": "/routes/(.*)",
+      "dest": "applications.py"
+    },
+    {
+      "src": "/routes/(.*)",
+      "dest": "departments.py"
     }
   ]
 }
