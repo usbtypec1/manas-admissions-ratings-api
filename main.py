@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 
+import routes
+
 app = FastAPI()
-
-
-@app.get('/')
-def hello(name: str):
-    return {'Hello': name}
+app.include_router(routes.departments.router)
+app.include_router(routes.applications.router)
