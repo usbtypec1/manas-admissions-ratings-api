@@ -1,3 +1,4 @@
+from typing import Union
 from datetime import datetime
 
 from sqlalchemy import ForeignKey, URL, create_engine
@@ -60,8 +61,8 @@ class Application(Base):
     stage: Mapped[int] = mapped_column(primary_key=True)
     rating: Mapped[int]
     department_score: Mapped[float]
-    ort_score: Mapped[float | None]
-    english_score: Mapped[float | None]
+    ort_score: Mapped[Union[float, None]]
+    english_score: Mapped[Union[float, None]]
     created_at: Mapped[datetime]
     department_id: Mapped[int] = mapped_column(ForeignKey('departments.id'))
     has_passed: Mapped[bool]
