@@ -1,3 +1,5 @@
+from typing import Union
+
 from sqlalchemy import case, func, select
 from sqlalchemy.orm import Session
 
@@ -13,7 +15,7 @@ __all__ = (
 def get_department_by_id(
         session: Session,
         department_id: int,
-) -> Department | None:
+) -> Union[Department, None]:
     return session.get(Department, {'id': department_id})
 
 
